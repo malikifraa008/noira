@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIRA | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fffdfb;
+    color: #80654f;
+    font-family: 'DM Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #fffdfb;
+    border-bottom: 1px solid #f5e8eb;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    letter-spacing: 5px;
+    color: #80654f;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #80654f;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d889a5;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px 65px;
+    background: #fff3f5;
+    position: relative;
+}
+
+.hero small {
+    letter-spacing: 4px;
+    font-size: 10px;
+    color: #d889a5;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 75px);
+    font-weight: 500;
+    margin: 18px 0;
+    color: #80654f;
+}
+
+.hero h1 span {
+    color: #d889a5;
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 520px;
+    margin: auto;
+    color: #947e70;
+}
+
+.section {
+    padding: 75px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading small {
+    color: #d889a5;
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.section-heading p {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #a18d80;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.project {
+    background: #fff7f8;
+    padding: 12px;
+    border-radius: 5px;
+    transition: 0.35s;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px #e9cbd455;
+}
+
+.project img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 17px 8px 10px;
+}
+
+.project-info small {
+    color: #d889a5;
+    letter-spacing: 2px;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.project-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 7px;
+}
+
+.project-info p {
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 7px;
+    color: #a18d80;
+}
+
+.note {
+    background: #f5eefa;
+    text-align: center;
+    padding: 65px 20px;
+    margin: 20px 8% 75px;
+    border-radius: 5px;
+}
+
+.note .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    color: #d889a5;
+}
+
+.note h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.note p {
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 480px;
+    margin: auto;
+}
+
+.note a {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 27px;
+    background: #d889a5;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.note a:hover {
+    background: #80654f;
+}
+
+footer {
+    background: #fff3f5;
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 11px;
+    color: #947e70;
+}
+
+footer .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 850px) {
+    nav {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    nav ul {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project img {
+        height: 280px;
+    }
+
+    .note {
+        margin: 10px 6% 55px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">NOIRA</div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <small>OUR CREATIVE COLLECTION</small>
+    <h1>Stories Through <span>Our Lens</span></h1>
+    <p>
+        Every photograph holds a little story. Explore our collection
+        of nature, flowers, pets and beautiful moments captured through photography.
+    </p>
+</header>
+
+<section class="section">
+
+    <div class="section-heading">
+        <small>THE NOIRA COLLECTION</small>
+        <h2>Our Portfolio</h2>
+        <p>A little world of colours, emotions and beautiful details.</p>
+    </div>
+
+    <div class="projects">
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800" alt="Golden sunrise landscape">
+            <div class="project-info">
+                <small>01 / Nature</small>
+                <h3>Golden Mornings</h3>
+                <p>Soft sunlight, peaceful skies and the beauty of a new day.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800" alt="Pink flowers">
+            <div class="project-info">
+                <small>02 / Flowers</small>
+                <h3>Blooming Stories</h3>
+                <p>Finding beauty in delicate petals and little details.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800" alt="Cute dog portrait">
+            <div class="project-info">
+                <small>03 / Pets</small>
+                <h3>Little Companions</h3>
+                <p>Capturing the sweetest expressions and playful moments.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Beautiful mountain scenery">
+            <div class="project-info">
+                <small>04 / Landscape</small>
+                <h3>Beyond The Hills</h3>
+                <p>Quiet landscapes that make us pause and appreciate nature.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Green forest">
+            <div class="project-info">
+                <small>05 / Wildlife</small>
+                <h3>Into The Wild</h3>
+                <p>A closer look at the wonderful world around us.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800" alt="Sunset sky">
+            <div class="project-info">
+                <small>06 / Moments</small>
+                <h3>Painted Skies</h3>
+                <p>Little moments that turn ordinary days into memories.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="note">
+    <div class="script">A little more to explore</div>
+    <h2>Every Picture Has a Story</h2>
+    <p>
+        We believe photography is more than taking pictures.
+        It is about noticing the little things and keeping beautiful moments alive.
+    </p>
+    <a href="gallery.html">EXPLORE OUR GALLERY</a>
+</section>
+
+<footer>
+    <div class="brand">NOIRA</div>
+    <p>Capturing little moments, creating lasting memories.</p>
+    <p style="margin-top: 12px;">© 2026 NOIRA Photography. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

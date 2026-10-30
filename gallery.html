@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOIRA | Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* =================================
+   1. BASIC SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffdfb;
+    color: #57453e;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --pink: #f5c5d4;
+    --dark-pink: #d889a5;
+    --cream: #fff5ee;
+    --brown: #80654f;
+    --white: #fffdfb;
+}
+
+/* =================================
+   2. NAVBAR
+================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border-bottom: 1px solid #f3e9e5;
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 43px;
+    color: var(--dark-pink);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--dark-pink);
+}
+
+/* =================================
+   3. GALLERY HERO
+================================= */
+
+.gallery-hero {
+    background: #fff3f5;
+    text-align: center;
+    padding: 85px 7% 75px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero::before {
+    content: "✿";
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    font-size: 55px;
+    color: #edbdcb;
+    opacity: 0.6;
+}
+
+.gallery-hero::after {
+    content: "✧";
+    position: absolute;
+    bottom: 20px;
+    right: 10%;
+    font-size: 55px;
+    color: #e6c68d;
+}
+
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 46px;
+    color: var(--dark-pink);
+}
+
+.gallery-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 65px);
+    font-weight: 500;
+    color: var(--brown);
+    margin: 12px 0;
+}
+
+.gallery-hero p {
+    max-width: 570px;
+    margin: auto;
+    color: #8d7a72;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =================================
+   4. CATEGORY FILTER
+================================= */
+
+.filter-section {
+    padding: 45px 7% 25px;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.filter-buttons button {
+    background: transparent;
+    border: 1px solid #e9d6d9;
+    padding: 11px 23px;
+    border-radius: 30px;
+    color: var(--brown);
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+    background: var(--dark-pink);
+    color: white;
+    border-color: var(--dark-pink);
+}
+
+/* =================================
+   5. GALLERY GRID
+================================= */
+
+.gallery-container {
+    padding: 35px 6% 100px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.gallery-card {
+    background: white;
+    padding: 9px;
+    border: 1px solid #f1e7e3;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px #b58b9b20;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-info {
+    padding: 13px 7px 9px;
+}
+
+.gallery-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--brown);
+}
+
+.gallery-info p {
+    color: #b18d91;
+    font-size: 11px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+/* Filter animation */
+
+.gallery-card.hide {
+    display: none;
+}
+
+/* =================================
+   6. DECORATIVE QUOTE
+================================= */
+
+.gallery-quote {
+    padding: 80px 8%;
+    text-align: center;
+    background: #fff3f5;
+}
+
+.gallery-quote h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 42px);
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1.5;
+}
+
+.gallery-quote p {
+    font-size: 13px;
+    color: var(--dark-pink);
+    margin-top: 17px;
+}
+
+/* =================================
+   7. FOOTER
+================================= */
+
+footer {
+    padding: 45px 8%;
+    text-align: center;
+    background: #fffdfb;
+}
+
+.footer-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--dark-pink);
+}
+
+footer p {
+    font-size: 12px;
+    color: #96847c;
+    margin-top: 12px;
+}
+
+/* =================================
+   8. TABLET RESPONSIVE
+================================= */
+
+@media (max-width: 950px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* =================================
+   9. MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .gallery-hero {
+        padding: 65px 6%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .gallery-card img {
+        height: 190px;
+    }
+
+    .gallery-container {
+        padding: 25px 4% 65px;
+    }
+
+    .filter-buttons {
+        gap: 9px;
+    }
+
+    .filter-buttons button {
+        padding: 9px 15px;
+        font-size: 11px;
+    }
+
+}
+
+/* =================================
+   10. SMALL MOBILE
+================================= */
+
+@media (max-width: 380px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card img {
+        height: 250px;
+    }
+
+    .nav-links {
+        gap: 11px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">NOIRA.</a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</header>
+
+
+<!-- GALLERY HEADING -->
+
+<section class="gallery-hero">
+
+    <div class="script-title">Captured with love</div>
+
+    <h1>Our Little Gallery</h1>
+
+    <p>
+        A collection of beautiful little moments,
+        colourful flowers, adorable animals and
+        breathtaking nature. Explore our visual diary.
+    </p>
+
+</section>
+
+
+<!-- CATEGORY FILTER -->
+
+<section class="filter-section">
+
+    <div class="filter-buttons">
+
+        <button class="active" data-filter="all">All Photos</button>
+
+        <button data-filter="nature">Nature</button>
+
+        <button data-filter="flowers">Flowers</button>
+
+        <button data-filter="pets">Pets</button>
+
+        <button data-filter="wildlife">Wildlife</button>
+
+        <button data-filter="landscape">Landscape</button>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY PHOTOS -->
+
+<section class="gallery-container">
+
+    <div class="gallery-grid">
+
+        <!-- FLOWERS -->
+
+        <div class="gallery-card" data-category="flowers">
+
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600"
+                 alt="Beautiful pink flowers">
+
+            <div class="gallery-info">
+                <h3>Flower Dreams</h3>
+                <p>FLOWER COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- NATURE -->
+
+        <div class="gallery-card" data-category="nature">
+
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600"
+                 alt="Green forest">
+
+            <div class="gallery-info">
+                <h3>Green Escape</h3>
+                <p>NATURE COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- PETS -->
+
+        <div class="gallery-card" data-category="pets">
+
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600"
+                 alt="Cute cat">
+
+            <div class="gallery-info">
+                <h3>Little Paws</h3>
+                <p>PET COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- LANDSCAPE -->
+
+        <div class="gallery-card" data-category="landscape">
+
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600"
+                 alt="Beautiful sunrise">
+
+            <div class="gallery-info">
+                <h3>Golden Morning</h3>
+                <p>LANDSCAPE COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- FLOWERS -->
+
+        <div class="gallery-card" data-category="flowers">
+
+            <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=600"
+                 alt="Beautiful green leaves">
+
+            <div class="gallery-info">
+                <h3>Little Greenery</h3>
+                <p>FLOWER COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- WILDLIFE -->
+
+        <div class="gallery-card" data-category="wildlife">
+
+            <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600"
+                 alt="Animal in nature">
+
+            <div class="gallery-info">
+                <h3>Wild Beauty</h3>
+                <p>WILDLIFE COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- PETS -->
+
+        <div class="gallery-card" data-category="pets">
+
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600"
+                 alt="Cute pet cat">
+
+            <div class="gallery-info">
+                <h3>Sweet Moments</h3>
+                <p>PET COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- LANDSCAPE -->
+
+        <div class="gallery-card" data-category="landscape">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600"
+                 alt="Mountain landscape">
+
+            <div class="gallery-info">
+                <h3>Beyond Nature</h3>
+                <p>LANDSCAPE COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- NATURE -->
+
+        <div class="gallery-card" data-category="nature">
+
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600"
+                 alt="Nature and wildlife">
+
+            <div class="gallery-info">
+                <h3>Natural Wonders</h3>
+                <p>NATURE COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- FLOWERS -->
+
+        <div class="gallery-card" data-category="flowers">
+
+            <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=600"
+                 alt="Flower garden">
+
+            <div class="gallery-info">
+                <h3>Soft Petals</h3>
+                <p>FLOWER COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- WILDLIFE -->
+
+        <div class="gallery-card" data-category="wildlife">
+
+            <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600"
+                 alt="Wildlife photography">
+
+            <div class="gallery-info">
+                <h3>Wild Encounters</h3>
+                <p>WILDLIFE COLLECTION</p>
+            </div>
+
+        </div>
+
+
+        <!-- LANDSCAPE -->
+
+        <div class="gallery-card" data-category="landscape">
+
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"
+                 alt="Beautiful lake landscape">
+
+            <div class="gallery-info">
+                <h3>Dreamy Views</h3>
+                <p>LANDSCAPE COLLECTION</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="gallery-quote">
+
+    <h2>
+        "Every picture tells a story,
+        every moment becomes a memory."
+    </h2>
+
+    <p>Collected moments by NOIRA ♡</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">NOIRA.</div>
+
+    <p>A creative photography world.</p>
+
+    <p>© 2026 NOIRA. All Rights Reserved.</p>
+
+</footer>
+
+
+<!-- FILTER JAVASCRIPT -->
+
+<script>
+
+const filterButtons = document.querySelectorAll(".filter-buttons button");
+
+const galleryCards = document.querySelectorAll(".gallery-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Remove active class
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // Add active class
+        button.classList.add("active");
+
+        const selectedCategory = button.getAttribute("data-filter");
+
+        galleryCards.forEach(card => {
+
+            const cardCategory = card.getAttribute("data-category");
+
+            if (selectedCategory === "all" ||
+                selectedCategory === cardCategory) {
+
+                card.classList.remove("hide");
+
+            } else {
+
+                card.classList.add("hide");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

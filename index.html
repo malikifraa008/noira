@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOIRA | Creative Photography</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==================================
+   1. BASIC SETTINGS
+================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffdfb;
+    color: #57453e;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --white: #fffdfb;
+    --pink: #f5c5d4;
+    --dark-pink: #d889a5;
+    --cream: #fff5ee;
+    --brown: #80654f;
+    --lavender: #eee7f5;
+}
+
+/* ==================================
+   2. NAVIGATION BAR
+================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 90px;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 43px;
+    color: var(--dark-pink);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 38px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dark-pink);
+}
+
+/* ==================================
+   3. HERO SECTION
+================================== */
+
+.hero {
+    width: 90%;
+    max-width: 1450px;
+    min-height: 620px;
+    margin: 20px auto 70px;
+    padding: 55px 6%;
+    background: #fff9f5;
+    border: 1px solid #f0e8e2;
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative flowers */
+
+.decoration {
+    position: absolute;
+    font-size: 40px;
+    color: var(--dark-pink);
+    opacity: 0.7;
+}
+
+.flower-one {
+    top: 30px;
+    left: 35px;
+}
+
+.flower-two {
+    bottom: 30px;
+    right: 40px;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content .welcome {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--dark-pink);
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 60px);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--brown);
+}
+
+.hero-content h1 span {
+    color: var(--dark-pink);
+    font-style: italic;
+}
+
+/* ==================================
+   4. HERO PHOTO COLLAGE
+================================== */
+
+.photo-collage {
+    width: 100%;
+    max-width: 950px;
+    min-height: 330px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    align-items: center;
+    gap: 30px;
+}
+
+.side-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-photos img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    border: 8px solid white;
+    box-shadow: 0 5px 15px #00000010;
+    transform: rotate(-4deg);
+}
+
+.side-photos img:last-child {
+    transform: rotate(4deg);
+}
+
+.main-photo {
+    position: relative;
+    background: white;
+    padding: 12px;
+    box-shadow: 0 8px 25px #00000010;
+    transform: rotate(1deg);
+}
+
+.main-photo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* ==================================
+   5. ANIME CHARACTER
+================================== */
+
+.anime-character {
+    width: 100%;
+    height: 300px;
+    background: #eee7f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.anime-character svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================================
+   6. HERO DESCRIPTION
+================================== */
+
+.hero-description {
+    text-align: center;
+    max-width: 600px;
+    margin: 35px auto 0;
+}
+
+.hero-description h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 4vw, 37px);
+    color: var(--brown);
+    line-height: 1.5;
+}
+
+.hero-description p {
+    font-size: 14px;
+    color: #907e75;
+    line-height: 1.8;
+    margin: 15px 0 22px;
+}
+
+.explore-btn {
+    display: inline-block;
+    border: 1px solid var(--brown);
+    color: var(--brown);
+    padding: 12px 55px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background: var(--brown);
+    color: white;
+}
+
+/* ==================================
+   7. INTRODUCTION
+================================== */
+
+.intro {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.script-heading {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    color: var(--dark-pink);
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    font-weight: 500;
+    color: var(--brown);
+    margin: 10px 0 20px;
+}
+
+.intro p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 2;
+    color: #8b7c74;
+}
+
+/* ==================================
+   8. GALLERY SECTION
+================================== */
+
+.gallery {
+    padding: 70px 8%;
+    background: #fff8f7;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--brown);
+}
+
+.section-title p {
+    margin-top: 12px;
+    color: #a18d85;
+    font-size: 13px;
+}
+
+/* Gallery Grid */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    padding: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+.gallery-item p {
+    padding: 12px 5px 5px;
+    font-family: 'Playfair Display', serif;
+    color: var(--brown);
+    text-align: center;
+}
+
+/* ==================================
+   9. CATEGORY SECTION
+================================== */
+
+.categories {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.category {
+    padding: 16px 28px;
+    background: var(--cream);
+    border: 1px solid #f1e2db;
+    border-radius: 40px;
+    color: var(--brown);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.category:hover {
+    background: var(--pink);
+    transform: translateY(-5px);
+}
+
+/* ==================================
+   10. QUOTE SECTION
+================================== */
+
+.quote {
+    background: #f9eaf0;
+    text-align: center;
+    padding: 80px 8%;
+}
+
+.quote h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 4vw, 40px);
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1.6;
+}
+
+.quote p {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #a47d8c;
+}
+
+/* ==================================
+   11. FOOTER
+================================== */
+
+footer {
+    background: #fffdfb;
+    text-align: center;
+    padding: 45px 8%;
+}
+
+.footer-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--dark-pink);
+}
+
+footer p {
+    font-size: 12px;
+    color: #96847c;
+    margin-top: 12px;
+}
+
+/* ==================================
+   12. TABLET RESPONSIVE
+================================== */
+
+@media (max-width: 900px) {
+
+    .photo-collage {
+        grid-template-columns: 110px 1fr 110px;
+        gap: 15px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ==================================
+   13. MOBILE RESPONSIVE
+================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 38px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        width: 94%;
+        margin-top: 10px;
+        padding: 45px 5%;
+        border-radius: 22px;
+    }
+
+    .photo-collage {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .side-photos {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .side-photos img {
+        width: 45%;
+        height: 110px;
+    }
+
+    .main-photo {
+        grid-row: 1;
+    }
+
+    .main-photo img {
+        height: 240px;
+    }
+
+    .anime-character {
+        height: 240px;
+    }
+
+    .hero-description {
+        margin-top: 25px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gallery-item img {
+        height: 170px;
+    }
+
+    .gallery {
+        padding: 55px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .intro h2 {
+        font-size: 27px;
+    }
+
+    .category-list {
+        gap: 10px;
+    }
+
+    .category {
+        padding: 12px 18px;
+    }
+
+}
+
+/* ==================================
+   14. SMALL MOBILE
+================================== */
+
+@media (max-width: 380px) {
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==================================
+     NAVBAR
+================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">NOIRA.</a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</header>
+
+
+<!-- ==================================
+     HERO SECTION
+================================== -->
+
+<section class="hero">
+
+    <span class="decoration flower-one">✿</span>
+    <span class="decoration flower-two">❀</span>
+
+    <div class="hero-content">
+
+        <p class="welcome">A CREATIVE PHOTOGRAPHY WORLD</p>
+
+        <h1>
+            Welcome to <span>NOIRA</span>
+        </h1>
+
+    </div>
+
+
+    <div class="photo-collage">
+
+        <!-- LEFT PHOTOS -->
+
+        <div class="side-photos">
+
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400"
+                 alt="Pink flowers">
+
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400"
+                 alt="Beautiful nature">
+
+        </div>
+
+
+        <!-- CENTRE ANIME CHARACTER -->
+
+        <div class="main-photo">
+
+            <div class="anime-character">
+
+                <svg viewBox="0 0 350 350"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Background stars -->
+
+                    <text x="25" y="55" font-size="28" fill="#d889a5">✦</text>
+                    <text x="290" y="80" font-size="25" fill="#e7c36e">✧</text>
+                    <text x="35" y="280" font-size="22" fill="#d889a5">✿</text>
+
+                    <!-- Hair behind -->
+
+                    <path d="M85 150 Q65 20 180 25 Q300 20 275 160 L290 310 Q240 350 215 285 L100 310 Q50 260 85 150"
+                          fill="#40333f"/>
+
+                    <!-- Neck -->
+
+                    <rect x="145" y="205" width="55" height="75"
+                          rx="20" fill="#f5c8b4"/>
+
+                    <!-- Face -->
+
+                    <ellipse cx="175" cy="155" rx="80" ry="100"
+                             fill="#ffddc9"/>
+
+                    <!-- Hair top -->
+
+                    <path d="M95 160 Q65 35 175 30 Q295 20 265 165
+                             Q230 95 200 100 Q150 135 115 105 Z"
+                          fill="#40333f"/>
+
+                    <!-- Side hair -->
+
+                    <path d="M100 120 Q65 220 105 280 L90 200 Z"
+                          fill="#40333f"/>
+
+                    <path d="M255 120 Q295 230 250 280 L270 195 Z"
+                          fill="#40333f"/>
+
+                    <!-- Hair bow -->
+
+                    <path d="M170 55 Q125 20 130 65 Q135 95 170 75
+                             Q205 95 215 65 Q220 25 170 55"
+                          fill="#f4a8c1"/>
+
+                    <circle cx="170" cy="65" r="8" fill="#ffe49e"/>
+
+                    <!-- Eyes -->
+
+                    <ellipse cx="145" cy="165" rx="10" ry="14"
+                             fill="#493440"/>
+
+                    <ellipse cx="205" cy="165" rx="10" ry="14"
+                             fill="#493440"/>
+
+                    <circle cx="148" cy="160" r="4" fill="white"/>
+                    <circle cx="208" cy="160" r="4" fill="white"/>
+
+                    <!-- Blush -->
+
+                    <ellipse cx="115" cy="195" rx="17" ry="8"
+                             fill="#ef9db2" opacity=".7"/>
+
+                    <ellipse cx="235" cy="195" rx="17" ry="8"
+                             fill="#ef9db2" opacity=".7"/>
+
+                    <!-- Smile -->
+
+                    <path d="M160 205 Q175 220 190 205"
+                          fill="none" stroke="#b66e7d"
+                          stroke-width="3" stroke-linecap="round"/>
+
+                    <!-- Dress -->
+
+                    <path d="M125 265 Q175 235 225 265
+                             L290 350 L60 350 Z"
+                          fill="#e99fbb"/>
+
+                    <path d="M150 260 Q175 290 200 260"
+                          fill="none" stroke="#fff5ed" stroke-width="5"/>
+
+                    <!-- Dress collar -->
+
+                    <path d="M145 260 L175 285 L205 260"
+                          fill="none" stroke="#fff5ed" stroke-width="4"/>
+
+                    <!-- Decorative flower -->
+
+                    <circle cx="175" cy="320" r="6" fill="#ffe49e"/>
+
+                </svg>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT PHOTOS -->
+
+        <div class="side-photos">
+
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400"
+                 alt="Flower arrangement">
+
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400"
+                 alt="Green forest">
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-description">
+
+        <h2>
+            Every frame holds a little magic.
+        </h2>
+
+        <p>
+            Discover a world filled with beautiful nature,
+            adorable pets and unforgettable moments.
+            Every photograph has a story to tell.
+        </p>
+
+        <a href="gallery.html" class="explore-btn">
+            EXPLORE MORE
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     INTRODUCTION
+================================== -->
+
+<section class="intro">
+
+    <div class="script-heading">A little about us</div>
+
+    <h2>Photography with a touch of magic.</h2>
+
+    <p>
+        NOIRA is a creative photography project that
+        celebrates the beauty of the world around us.
+        From tiny details in nature to lovely animal
+        moments, we capture stories worth remembering.
+    </p>
+
+</section>
+
+
+<!-- ==================================
+     FEATURED GALLERY
+================================== -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-title">
+
+        <div class="script-heading">Our little collection</div>
+
+        <h2>Beautiful Moments</h2>
+
+        <p>A glimpse into our creative world ♡</p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600"
+                 alt="Pink flowers">
+
+            <p>Flower Stories</p>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600"
+                 alt="Forest nature">
+
+            <p>Nature Diaries</p>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600"
+                 alt="Cute cat">
+
+            <p>Little Paws</p>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600"
+                 alt="Landscape">
+
+            <p>Dreamy Landscapes</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     CATEGORIES
+================================== -->
+
+<section class="categories">
+
+    <div class="script-heading">Find your favourite</div>
+
+    <div class="section-title">
+        <h2>Explore Our World</h2>
+    </div>
+
+    <div class="category-list">
+
+        <div class="category">✿ Nature</div>
+
+        <div class="category">♡ Pets</div>
+
+        <div class="category">✧ Wildlife</div>
+
+        <div class="category">❀ Landscapes</div>
+
+        <div class="category">♡ Fine Art</div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     QUOTE
+================================== -->
+
+<section class="quote">
+
+    <h2>
+        "The world is full of little things
+        worth remembering."
+    </h2>
+
+    <p>Captured with love, created with imagination ♡</p>
+
+</section>
+
+
+<!-- ==================================
+     FOOTER
+================================== -->
+
+<footer>
+
+    <div class="footer-logo">NOIRA.</div>
+
+    <p>A creative photography world.</p>
+
+    <p>© 2026 NOIRA. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

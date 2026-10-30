@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NOIRA | Contact</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffdfb;
+    color: #80654f;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    border-bottom: 1px solid #f5e8eb;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    letter-spacing: 5px;
+    color: #80654f;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #80654f;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d889a5;
+}
+
+/* HERO */
+
+.hero {
+    background: #fff3f5;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero small {
+    color: #d889a5;
+    letter-spacing: 4px;
+    font-size: 10px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 7vw, 72px);
+    font-weight: 500;
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: #d889a5;
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 480px;
+    margin: auto;
+    color: #947e70;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    padding: 75px 8%;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: start;
+}
+
+/* LEFT SIDE */
+
+.contact-info {
+    background: #f5eefa;
+    padding: 40px 32px;
+    border-radius: 5px;
+}
+
+.script {
+    font-family: 'Great Vibes', cursive;
+    color: #d889a5;
+    font-size: 38px;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 10px 0 15px;
+}
+
+.contact-info > p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #947e70;
+}
+
+.info-item {
+    margin-top: 28px;
+}
+
+.info-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.info-item p {
+    font-size: 12px;
+    color: #947e70;
+    overflow-wrap: anywhere;
+}
+
+.info-item a {
+    color: #947e70;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    color: #d889a5;
+}
+
+/* FORM */
+
+.contact-form {
+    background: #fff7f8;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.contact-form h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-form > p {
+    font-size: 12px;
+    color: #947e70;
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 9px;
+    color: #80654f;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #f0dce3;
+    background: #fffdfb;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: #80654f;
+    border-radius: 3px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d889a5;
+}
+
+.form-group textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.submit-btn {
+    border: none;
+    background: #d889a5;
+    color: white;
+    padding: 14px 30px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #80654f;
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#form-message {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #80654f;
+    line-height: 1.7;
+}
+
+/* QUOTE */
+
+.quote {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff3f5;
+}
+
+.quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(21px, 4vw, 30px);
+    font-style: italic;
+}
+
+.quote span {
+    display: block;
+    margin-top: 15px;
+    color: #d889a5;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 11px;
+    color: #947e70;
+}
+
+footer .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    nav {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    nav ul {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .contact-section {
+        padding: 45px 6%;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 28px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">NOIRA</div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+    <small>LET'S CONNECT</small>
+
+    <h1>Get In <span>Touch</span></h1>
+
+    <p>
+        Have a question, an idea or just want to say hello?
+        We would love to hear from you.
+    </p>
+</header>
+
+<!-- CONTACT DETAILS AND FORM -->
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="contact-info">
+
+            <div class="script">Say Hello!</div>
+
+            <h2>Let's Talk</h2>
+
+            <p>
+                Every beautiful connection starts with a simple hello.
+                Send us a message and let's share our love for photography.
+            </p>
+
+            <div class="info-item">
+                <h3>✉ Email</h3>
+                <p>your-email@example.com</p>
+            </div>
+
+            <div class="info-item">
+                <h3>⌖ Location</h3>
+                <p>Mumbai, India</p>
+            </div>
+
+            <div class="info-item">
+                <h3>♡ Follow Our Journey</h3>
+                <p>Photography • Nature • Creative Stories</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+
+        <div class="contact-form">
+
+            <h2>Send Us a Message</h2>
+
+            <p>We would be happy to hear your thoughts.</p>
+
+            <form id="contactForm">
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name"
+                    placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email"
+                    placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject"
+                    placeholder="What is it about?" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message"
+                    placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    SEND MESSAGE →
+                </button>
+
+                <p id="form-message" aria-live="polite"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUOTE -->
+
+<section class="quote">
+    <p>"The best memories are the ones we capture."</p>
+    <span>With love, NOIRA</span>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="brand">NOIRA</div>
+
+    <p>Capturing little moments, creating lasting memories.</p>
+
+    <p style="margin-top: 12px;">
+        © 2026 NOIRA Photography. All rights reserved.
+    </p>
+</footer>
+
+<!-- BACKEND CONNECTION -->
+
+<script>
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("form-message");
+const submitBtn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "SENDING...";
+
+    formMessage.textContent = "";
+
+    try {
+
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            body: new FormData(form)
+        });
+
+        const result = await response.json();
+
+        formMessage.textContent = result.message;
+
+        if (response.ok && result.success) {
+            formMessage.style.color = "green";
+            form.reset();
+        } else {
+            formMessage.style.color = "#c0392b";
+        }
+
+    } catch (error) {
+
+        formMessage.textContent =
+            "Unable to send your message. Please try again.";
+
+        formMessage.style.color = "#c0392b";
+
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "SEND MESSAGE →";
+
+});
+</script>
+
+</body>
+</html>

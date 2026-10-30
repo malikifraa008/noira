@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOIRA | About Us</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================
+   1. BASIC SETTINGS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffdfb;
+    color: #57453e;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --pink: #f5c5d4;
+    --dark-pink: #d889a5;
+    --cream: #fff5ee;
+    --brown: #80654f;
+    --lavender: #eee7f5;
+    --white: #fffdfb;
+}
+
+/* =====================================
+   2. NAVBAR
+===================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border-bottom: 1px solid #f3e9e5;
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 43px;
+    color: var(--dark-pink);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--brown);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--dark-pink);
+}
+
+/* =====================================
+   3. ABOUT HERO
+===================================== */
+
+.about-hero {
+    width: 90%;
+    max-width: 1400px;
+    margin: 25px auto 70px;
+    padding: 75px 8%;
+    min-height: 420px;
+    background: #fff3f5;
+    border: 1px solid #f2e4e4;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 70px);
+    font-weight: 500;
+    color: var(--brown);
+    margin: 15px 0;
+}
+
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    color: var(--dark-pink);
+    font-size: 45px;
+}
+
+.about-hero p {
+    max-width: 620px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 14px;
+    color: #8d7a72;
+}
+
+.decor {
+    position: absolute;
+    color: #e5aabd;
+    font-size: 50px;
+}
+
+.decor.one {
+    top: 25px;
+    left: 7%;
+}
+
+.decor.two {
+    bottom: 25px;
+    right: 8%;
+}
+
+/* =====================================
+   4. OUR STORY
+===================================== */
+
+.story {
+    padding: 60px 9% 100px;
+}
+
+.story-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.story-image {
+    min-height: 430px;
+    background: #eee7f5;
+    border: 12px solid white;
+    box-shadow: 0 10px 30px #9e77851c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.story-image svg {
+    width: 100%;
+    height: 100%;
+    max-height: 430px;
+}
+
+.sticker {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffe8a8;
+    color: #80654f;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    transform: rotate(8deg);
+}
+
+.story-content .script-title {
+    font-size: 40px;
+}
+
+.story-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 500;
+    color: var(--brown);
+    margin: 12px 0 20px;
+}
+
+.story-content p {
+    font-size: 14px;
+    line-height: 2;
+    color: #8b7c74;
+    margin-bottom: 15px;
+}
+
+/* =====================================
+   5. OUR VISION
+===================================== */
+
+.vision {
+    background: #fff5ee;
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 500;
+    color: var(--brown);
+    margin: 12px 0 18px;
+}
+
+.vision-description {
+    max-width: 650px;
+    margin: auto;
+    color: #8b7c74;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.vision-card {
+    background: white;
+    padding: 35px 22px;
+    border: 1px solid #f0e5e0;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px #c49aa51b;
+}
+
+.vision-icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.vision-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: var(--brown);
+    margin-bottom: 12px;
+}
+
+.vision-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #93817a;
+}
+
+/* =====================================
+   6. OUR PHILOSOPHY
+===================================== */
+
+.philosophy {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.philosophy h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-style: italic;
+    color: var(--dark-pink);
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.philosophy p {
+    font-size: 13px;
+    color: #9a8980;
+}
+
+/* =====================================
+   7. CTA SECTION
+===================================== */
+
+.about-cta {
+    background: #f9eaf0;
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.about-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 45px);
+    font-weight: 500;
+    color: var(--brown);
+    margin-bottom: 15px;
+}
+
+.about-cta p {
+    font-size: 14px;
+    color: #947f82;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 13px 35px;
+    background: var(--dark-pink);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: var(--brown);
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   8. FOOTER
+===================================== */
+
+footer {
+    padding: 45px 8%;
+    text-align: center;
+    background: var(--white);
+}
+
+.footer-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--dark-pink);
+}
+
+footer p {
+    font-size: 12px;
+    color: #96847c;
+    margin-top: 12px;
+}
+
+/* =====================================
+   9. TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .story-container {
+        gap: 35px;
+    }
+
+    .story-image {
+        min-height: 350px;
+    }
+
+    .vision-grid {
+        gap: 15px;
+    }
+
+}
+
+/* =====================================
+   10. MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .about-hero {
+        width: 94%;
+        padding: 60px 6%;
+        min-height: 350px;
+    }
+
+    .story {
+        padding: 45px 6% 70px;
+    }
+
+    .story-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .story-image {
+        min-height: 330px;
+    }
+
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vision {
+        padding: 65px 6%;
+    }
+
+    .philosophy {
+        padding: 65px 7%;
+    }
+
+}
+
+/* =====================================
+   11. SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+
+    .nav-links {
+        gap: 11px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .story-image {
+        min-height: 270px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     NAVBAR
+===================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">NOIRA.</a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</header>
+
+
+<!-- =====================================
+     ABOUT HERO
+===================================== -->
+
+<section class="about-hero">
+
+    <span class="decor one">✿</span>
+    <span class="decor two">✧</span>
+
+    <div class="script-title">A little about us</div>
+
+    <h1>Welcome to NOIRA</h1>
+
+    <p>
+        A creative space where photography meets imagination.
+        We believe that every little detail has a story,
+        and every beautiful moment deserves to be remembered.
+    </p>
+
+</section>
+
+
+<!-- =====================================
+     OUR STORY
+===================================== -->
+
+<section class="story">
+
+    <div class="story-container">
+
+        <!-- Anime Illustration -->
+
+        <div class="story-image">
+
+            <span class="sticker">Dream & Create ♡</span>
+
+            <svg viewBox="0 0 350 420"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Hair behind -->
+
+                <path d="M70 160 Q40 20 175 25
+                         Q320 20 280 170
+                         L300 340 Q250 400 220 300
+                         L100 350 Q40 290 70 160"
+                      fill="#40333f"/>
+
+                <!-- Neck -->
+
+                <rect x="145" y="215" width="60"
+                      height="85" rx="20"
+                      fill="#f5c8b4"/>
+
+                <!-- Face -->
+
+                <ellipse cx="175" cy="160"
+                         rx="82" ry="102"
+                         fill="#ffddc9"/>
+
+                <!-- Hair -->
+
+                <path d="M90 160 Q55 25 175 25
+                         Q300 20 260 165
+                         Q235 100 200 105
+                         Q150 140 110 105 Z"
+                      fill="#40333f"/>
+
+                <path d="M95 140 Q65 260 110 290
+                         L95 210 Z"
+                      fill="#40333f"/>
+
+                <path d="M255 140 Q290 250 245 290
+                         L265 205 Z"
+                      fill="#40333f"/>
+
+                <!-- Bow -->
+
+                <path d="M170 55 Q120 15 125 60
+                         Q130 95 170 75
+                         Q215 100 220 60
+                         Q215 20 170 55"
+                      fill="#f2a6c1"/>
+
+                <circle cx="170" cy="65" r="8"
+                        fill="#ffe49e"/>
+
+                <!-- Eyes -->
+
+                <ellipse cx="145" cy="170"
+                         rx="10" ry="14"
+                         fill="#493440"/>
+
+                <ellipse cx="205" cy="170"
+                         rx="10" ry="14"
+                         fill="#493440"/>
+
+                <circle cx="148" cy="165" r="4"
+                        fill="white"/>
+
+                <circle cx="208" cy="165" r="4"
+                        fill="white"/>
+
+                <!-- Blush -->
+
+                <ellipse cx="115" cy="200"
+                         rx="17" ry="8"
+                         fill="#ef9db2" opacity=".7"/>
+
+                <ellipse cx="235" cy="200"
+                         rx="17" ry="8"
+                         fill="#ef9db2" opacity=".7"/>
+
+                <!-- Smile -->
+
+                <path d="M160 210 Q175 225 190 210"
+                      fill="none"
+                      stroke="#b66e7d"
+                      stroke-width="3"
+                      stroke-linecap="round"/>
+
+                <!-- Dress -->
+
+                <path d="M120 280 Q175 245 230 280
+                         L295 420 L55 420 Z"
+                      fill="#e99fbb"/>
+
+                <path d="M145 280 L175 310 L205 280"
+                      fill="none"
+                      stroke="#fff5ed"
+                      stroke-width="5"/>
+
+                <!-- Decorations -->
+
+                <text x="30" y="100"
+                      font-size="30" fill="#d889a5">✦</text>
+
+                <text x="285" y="270"
+                      font-size="25" fill="#e6bd77">✧</text>
+
+            </svg>
+
+        </div>
+
+
+        <!-- Story Text -->
+
+        <div class="story-content">
+
+            <div class="script-title">Our story</div>
+
+            <h2>Where little moments become memories.</h2>
+
+            <p>
+                NOIRA began with a simple idea:
+                to appreciate the beauty hidden in everyday life.
+                We created this space to bring together our love
+                for photography, nature and creativity.
+            </p>
+
+            <p>
+                From colourful flowers and peaceful landscapes
+                to adorable pets and fascinating wildlife,
+                we enjoy exploring different stories through
+                every frame.
+            </p>
+
+            <p>
+                Our goal is to make every visit feel like
+                turning the pages of a beautiful visual diary.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     OUR VISION
+===================================== -->
+
+<section class="vision">
+
+    <div class="script-title">What makes us different</div>
+
+    <h2 class="section-title">Our Little Philosophy</h2>
+
+    <p class="vision-description">
+        We believe that photography is not just about
+        pictures. It is about noticing, feeling and
+        celebrating the world around us.
+    </p>
+
+
+    <div class="vision-grid">
+
+        <div class="vision-card">
+
+            <div class="vision-icon">🌸</div>
+
+            <h3>Creativity</h3>
+
+            <p>
+                We love finding fresh perspectives
+                and expressing ideas through visuals.
+            </p>
+
+        </div>
+
+
+        <div class="vision-card">
+
+            <div class="vision-icon">♡</div>
+
+            <h3>Little Details</h3>
+
+            <p>
+                We appreciate the small details
+                that make every moment special.
+            </p>
+
+        </div>
+
+
+        <div class="vision-card">
+
+            <div class="vision-icon">🌿</div>
+
+            <h3>Nature</h3>
+
+            <p>
+                We celebrate the colours, beauty
+                and wonders of the natural world.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     PHILOSOPHY QUOTE
+===================================== -->
+
+<section class="philosophy">
+
+    <div class="script-title">A little reminder</div>
+
+    <h2>
+        "Sometimes the smallest moments
+        create the most beautiful memories."
+    </h2>
+
+    <p>THE NOIRA WAY ♡</p>
+
+</section>
+
+
+<!-- =====================================
+     CALL TO ACTION
+===================================== -->
+
+<section class="about-cta">
+
+    <h2>Let's explore something beautiful.</h2>
+
+    <p>
+        Take a little journey through our collection
+        of photographs and stories.
+    </p>
+
+    <a href="gallery.html" class="cta-btn">
+        EXPLORE GALLERY ✿
+    </a>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <div class="footer-logo">NOIRA.</div>
+
+    <p>A creative photography world.</p>
+
+    <p>© 2026 NOIRA. All Rights Reserved.</p>
+
+</footer>
+
+
+</body>
+</html>
